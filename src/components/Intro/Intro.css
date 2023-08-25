@@ -1,0 +1,42 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  justify-content: center;
+}
+
+.intro__title {
+  margin: 0 0 35px;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: .2px;
+  color: #252b42;
+}
+
+.intro__nav {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+}
+
+.intro__btn {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.57;
+  padding: 15px 40px;
+  letter-spacing: .2px;
+  border: 1px solid #ff685b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.intro__btn_login {
+  background-color: #ff685b;
+  color: #fff;
+}
+
+.intro__btn_contacts {
+  background-color: transparent;
+  color: #ff685b;
+}

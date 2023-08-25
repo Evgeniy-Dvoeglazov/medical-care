@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'OpenSans';
+  font-style:  normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("OpenSans-SemiBold.woff2?v=3.19") format("woff2"),
+       url("OpenSans-SemiBold.woff?v=3.19") format("woff");
+}

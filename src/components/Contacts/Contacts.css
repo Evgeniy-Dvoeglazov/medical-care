@@ -1,0 +1,17 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  justify-content: center;
+  max-width: 1046px;
+  padding: 0 71px;
+  margin: 0 auto;
+}
+
+.contacts__title {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: .2px;
+  color: #252b42;
+}

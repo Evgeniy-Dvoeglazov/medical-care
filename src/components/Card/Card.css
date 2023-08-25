@@ -1,0 +1,38 @@
+.card {
+  width: 328px;
+  padding: 35px 40px;
+  box-shadow: 0 13px 19px rgba(0, 0 ,0 , .07);
+  box-sizing: border-box;
+}
+
+.card__image-bg {
+  background-color: #e74040;
+  width: 32px;
+  height: 32px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.card__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .1px;
+  margin: 20px 0;
+  color: #252b42;
+}
+
+.card__line {
+  height: 2px;
+  width: 50px;
+  background-color: #e74040;
+}
+
+.card__description {
+  font-weight: 400;
+  margin: 20px 0 0;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: .2px;
+  color: #737373;
+}

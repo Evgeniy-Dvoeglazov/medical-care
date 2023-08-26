@@ -1,16 +1,18 @@
 import './Header.css';
-import logo from '../../images/logo.svg';
+// import logo from '../../images/logo.svg';
 import { useNavigate } from 'react-router-dom';
 
 function Header(props) {
 
   const navigate = useNavigate();
 
-  const handleBtnContacts = () => navigate('/contacts');
+  const handleBtnContacts = () => navigate('/contacts', { replace: 'true' });
+
+  const handlerClickLogo = () => navigate('/', { replace: 'true' });
 
   function handleBtn() {
-    if (props.isLogin) {
-      navigate('/', { replace: 'true' })
+    if (props.loggedIn) {
+      props.handleLogout();
     } else {
       props.openPopup();
     }
@@ -18,10 +20,10 @@ function Header(props) {
 
   return (
     <header className='header'>
-      <img className='header__logo' src={logo} alt='logo' />
+      <button className='header__logo' type='button' onClick={handlerClickLogo}></button>
       <nav className='header__nav'>
-        <button className='header__btn-contacts' type='button' onClick={handleBtnContacts}>{!isContacts ? 'Контакты' : 'Главная'}</button>
-        <button className='header__btn-login' type='button' onClick={handleBtn}>{props.isLogin ? 'Выйти' : 'Войти'}</button>
+        <button className='header__btn-contacts' type='button' onClick={handleBtnContacts}>Контакты</button>
+        <button className='header__btn-login' type='button' onClick={handleBtn}>{props.loggedIn ? 'Выйти' : 'Войти'}</button>
       </nav>
     </header>
   );

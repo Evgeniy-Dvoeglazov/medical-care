@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "test@test.ru",
+      "password": "$2a$10$z4eQKqZCD6miXleAj/hW4eEBw.zDYXPju.zuCT9hBVXguZMCSUvui",
+      "name": "Евгений",
+      "id": "YE0fVY0"
+    },
+    {
+      "email": "nikolay@test.ru",
+      "password": "$2a$10$5nDvsBrX/W/31lbkLE/Y/u4W0GCXvpG/IXoNAOnFM67xMz1vQvtuS",
+      "name": "Николай",
+      "id": "97DVQeh"
+    },
+    {
+      "email": "anna@test.ru",
+      "password": "$2a$10$Fh5yOkfH3SgB/RHC3B38f.DLZujaugjW1LzKmFIc3PMLeuOrvZWD.",
+      "name": "Анна",
+      "id": "iFTEDth"
+    }
+  ]
+}

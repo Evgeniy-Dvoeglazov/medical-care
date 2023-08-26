@@ -1,14 +1,16 @@
 import './Profile.css';
 import Intro from '../Intro/Intro'
 
-function Profile() {
+function Profile(props) {
+
+  const userName = localStorage.getItem('userName');
+
   return (
     <section className='profile'>
       <Intro
-        title={`Привет`}
-        btnLoginText='Выйти из аккаунта'
-        btnContactsText='Перейти в контакты'
-        isLogin={true}
+        loggedIn={props.loggedIn}
+        handleLogout={props.handleLogout}
+        title={`Привет, ${userName}`}
       />
     </section>
   )

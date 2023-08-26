@@ -8,8 +8,20 @@
 }
 
 .header__logo {
+  background-image: url(../../images/logo.svg);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 53.27px;
   height: 22.66px;
+  cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.header__logo:hover {
+  opacity: .7;
 }
 
 .header__btn-contacts {

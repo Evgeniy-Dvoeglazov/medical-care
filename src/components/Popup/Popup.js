@@ -9,18 +9,21 @@ function Popup(props) {
 
   const errorClassname = (name) => `popup__error ${errors[name] ? 'popup__error_visible' : ''}`;
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!getValues('email') || !getValues('password')) {
-  //     return;
-  //   }
-  //   props.onLogin(getValues('password'), getValues('email'));
-  // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!getValues('login') || !getValues('password')) {
+      return;
+    }
+    props.onLogin(getValues('login'), getValues('password'));
+    props.closePopup();
+    reset();
+  }
 
   useEffect(() => {
     function ClosePopupOnEsc(evt) {
       if ((evt.key === 'Escape') && props.isPopupOpen) {
         props.closePopup();
+        reset();
       }
     }
     if (props.isPopupOpen) {
@@ -36,6 +39,7 @@ function Popup(props) {
     function ClosePopupOnOverlay(evt) {
       if (evt.target.classList.contains('popup_opened')) {
         props.closePopup();
+        reset();
       }
     }
     if (props.isPopupOpen) {
@@ -56,28 +60,28 @@ function Popup(props) {
     <div className={`popup ${props.isPopupOpen && 'popup_opened'}`}>
       <div className='popup__container'>
         <h2 className='popup__title'>Авторизация</h2>
-        <form className='popup__form' name='form' noValidate>
-          <input className='popup__input' name='login' type='text' placeholder='Логин'
+        <form className='popup__form' name='form' onSubmit={handleSubmit} noValidate>
+          <input className='popup__input' name='login' type='email' placeholder='Email'
             {...register('login', {
-              required: 'Заполните это поле.',
-              minLength: {
-                value: 2,
-                message: 'Логин должен быть не короче 2 символов.'
+              required: 'Заполните это поле',
+              pattern: {
+                value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                message: 'Введите Email'
               }
             })}
           />
           {errors.login && <span className={errorClassname('login')}>{errors.login.message}</span>}
           <input className='popup__input' name='password' type='password' placeholder='Пароль'
             {...register('password', {
-              required: 'Заполните это поле.',
+              required: 'Заполните это поле',
               minLength: {
                 value: 8,
-                message: 'Пароль должен быть не короче 8 символов.'
+                message: 'Пароль должен быть не короче 8 символов'
               }
             })}
           />
           {errors.password && <span className={errorClassname('password')}>{errors.password.message}</span>}
-          <button className='popup__submitBtn' type='submit'>Войти</button>
+          <button className={`popup__submitBtn ${isValid ? '' : 'popup__submitBtn_disabled'}`} type='submit'>Войти</button>
         </form>
         <button className='popup__closeBtn' type='button'
           aria-label='Кнопка закрытия формы' onClick={handleClosePopupBtn}></button>

@@ -8,16 +8,11 @@ import Popup from '../Popup/Popup';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as auth from '../../utils/auth.js';
-import { CurrentUserContext } from '../../context/CurrentUserContext';
-
-
-
 
 function App() {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState({});
   // const [users, setUsers] = useState(null);
 
   const navigate = useNavigate();
@@ -42,7 +37,6 @@ function App() {
     const jwt = localStorage.getItem('token');
     if (jwt) {
       setLoggedIn(true);
-      navigate('/user', { replace: true });
     } else return;
   }
 
@@ -76,7 +70,6 @@ function App() {
   }
 
   return (
-    <CurrentUserContext.Provider value={currentUser}>
       <div className='app'>
         <Routes>
           <Route path='/' element={
@@ -124,7 +117,6 @@ function App() {
           closePopup={closePopup}
         />
       </div>
-    </CurrentUserContext.Provider>
   );
 }
 

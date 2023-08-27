@@ -7,7 +7,7 @@ function NotFoundPage() {
       <div className="notFoundPage__container">
         <h2 className="notFoundPage__title">404</h2>
         <p className="notFoundPage__description">Страница не&nbsp;найдена</p>
-        <Link to="/" className="notFoundPage__link">Назад</Link>
+        <Link to="/" className="notFoundPage__link hover">Назад</Link>
       </div>
     </section>
   );

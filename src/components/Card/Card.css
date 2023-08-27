@@ -1,5 +1,5 @@
 .card {
-  width: 328px;
+  width: 100%;
   padding: 35px 40px;
   box-shadow: 0 13px 19px rgba(0, 0 ,0 , .07);
   box-sizing: border-box;
@@ -35,4 +35,13 @@
   line-height: 1.43;
   letter-spacing: .2px;
   color: #737373;
+
 }
+
+@media screen and (max-width: 575px) {
+  .card-medHistory{
+    grid-row: 1/2;
+  }
+}
+
+

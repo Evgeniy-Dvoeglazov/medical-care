@@ -17,14 +17,9 @@
   width: 53.27px;
   height: 22.66px;
   cursor: pointer;
-  transition: opacity .2s linear;
 }
 
-.header__logo:hover {
-  opacity: .7;
-}
-
-.header__btn-contacts {
+.header__btn-nav {
   padding: 0;
   font-family: 'OpenSans';
   font-weight: 600;
@@ -48,4 +43,30 @@
   background-color: transparent;
   border-radius: 7px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    padding: 31.19px 30px 25.15px;
+  }
+
+  .header__btn-nav {
+    margin-right: 10px;
+  }
+
+  .header__btn-login {
+    padding: 6px 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header {
+    padding: 31.19px 10px 25.15px;
+  }
 }

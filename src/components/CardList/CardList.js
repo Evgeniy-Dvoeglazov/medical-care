@@ -8,16 +8,19 @@ function CardList() {
   return (
     <ul className='cardList'>
       <Card
+        name='cardiogram'
         image={cardiogram}
         title='Онлайн-прием'
         text='Рыба текст'
       />
       <Card
+        name='stethoscope'
         image={stethoscope}
         title='Экстренный случай'
         text='Рыба текст'
       />
       <Card
+        name='medHistory'
         image={medHistory}
         title='Лечение рака'
         text='Рыба текст'

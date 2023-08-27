@@ -1,7 +1,7 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  height: 280px;
+  min-height: 280px;
   justify-content: center;
   max-width: 1046px;
   padding: 0 71px;
@@ -14,4 +14,20 @@
   line-height: 1.38;
   letter-spacing: .2px;
   color: #252b42;
+}
+
+@media screen and (max-width: 991px) {
+  .contacts {
+    padding: 0 30px
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .contacts {
+    padding: 0 10px
+  }
+
+  .contacts__title {
+    font-size: 28px;
+  }
 }

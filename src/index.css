@@ -1,3 +1,10 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/montserrat.css);
 @import url(./vendor/fonts/openSans.css);
+
+.hover {
+  transition: opacity .2s linear;
+}
+.hover:hover {
+  opacity: .6;
+}

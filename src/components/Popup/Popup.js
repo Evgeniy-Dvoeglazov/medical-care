@@ -81,9 +81,9 @@ function Popup(props) {
             })}
           />
           {errors.password && <span className={errorClassname('password')}>{errors.password.message}</span>}
-          <button className={`popup__submitBtn ${isValid ? '' : 'popup__submitBtn_disabled'}`} type='submit'>Войти</button>
+          <button className={`popup__submitBtn ${isValid ? '' : 'popup__submitBtn_disabled'} hover`} type='submit'>Войти</button>
         </form>
-        <button className='popup__closeBtn' type='button'
+        <button className='popup__closeBtn hover' type='button'
           aria-label='Кнопка закрытия формы' onClick={handleClosePopupBtn}></button>
       </div>
     </div>

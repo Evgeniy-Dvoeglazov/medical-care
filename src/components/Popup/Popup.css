@@ -21,7 +21,6 @@
 }
 
 .popup__container {
-
   color: #000;
   background-color: #fff;
   width: 430px;
@@ -45,11 +44,6 @@
   top: -40px;
   right: -40px;
   cursor: pointer;
-  transition: opacity .2s linear;
-}
-
-.popup__closeBtn:hover {
-  opacity: .6;
 }
 
 .popup__title {
@@ -90,11 +84,6 @@
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  transition: opacity .2s linear;
-}
-
-.popup__submitBtn:hover {
-  opacity: .8;
 }
 
 .popup__submitBtn_disabled {
@@ -111,6 +100,18 @@
   color: #ff0000;
 }
 
+@media screen and (max-width: 575px) {
+  .popup__container {
+    margin: 0 10px;
+  }
+
+  .popup__closeBtn {
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    right: 0;
+  }
+}
 
 /* .popup {
   display: flex;

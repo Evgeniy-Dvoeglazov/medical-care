@@ -1,10 +1,10 @@
 .header {
-  padding: 31.19px 71px 25.15px;
+  padding: 20px 71px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #000;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 81px;
 }
 
 .header__logo {
@@ -14,8 +14,8 @@
   padding: 0;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 53.27px;
-  height: 22.66px;
+  width: 54px;
+  height: 23px;
   cursor: pointer;
 }
 
@@ -38,7 +38,7 @@
   font-size: 20px;
   line-height: 1.219;
   color: #ff685b;
-  padding: 8px 60px;
+  padding: 6px 58px;
   border: 2px solid #ff685b;
   background-color: transparent;
   border-radius: 7px;
@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 991px) {
   .header {
-    padding: 31.19px 30px 25.15px;
+    padding: 20px 30px;
   }
 
   .header__btn-nav {
@@ -55,18 +55,18 @@
   }
 
   .header__btn-login {
-    padding: 6px 20px;
+    padding: 4px 18px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .header {
-    margin-bottom: 0;
+    margin-bottom: 40px;
   }
 }
 
 @media screen and (max-width: 575px) {
   .header {
-    padding: 31.19px 10px 25.15px;
+    padding: 22px 10px;
   }
 }

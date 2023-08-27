@@ -1,5 +1,5 @@
 .cardList {
-  margin: 80px 0 0;
+  margin: 97px 0 0;
   padding: 0;
   list-style: none;
   display: grid;
@@ -11,6 +11,6 @@
 
 @media screen and (max-width: 767px) {
   .cardList {
-    margin: 11px 13.5px 0;
+    margin: 30px 13.5px 0;
   }
 }

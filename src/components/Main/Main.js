@@ -7,9 +7,9 @@ function Main(props) {
     <main className="main">
       <Intro
         title='Место для получения медицинской помощи'
-        btnContactsText='Контакты'
         openPopup={props.openPopup}
         loggedIn={props.loggedIn}
+        page='main'
       />
       <CardList />
     </main>

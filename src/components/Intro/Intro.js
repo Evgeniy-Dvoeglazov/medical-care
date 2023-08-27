@@ -17,7 +17,7 @@ function Intro(props) {
 
   return (
     <section className='intro'>
-      <h1 className='intro__title'>{props.title}</h1>
+      <h1 className={`intro__title intro__title_${props.page}`}>{props.title}</h1>
       <nav className='intro__nav'>
         <button className='intro__btn intro__btn_login hover' onClick={handleBtn}>{props.loggedIn ? 'Выйти из аккаунта' : 'Войти'}</button>
         <button className='intro__btn intro__btn_contacts hover' type='button' onClick={handleBtnContacts}>{props.loggedIn ? 'Перейти в контакты' : 'Контакты'}</button>

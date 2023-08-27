@@ -11,6 +11,7 @@ function Profile(props) {
         loggedIn={props.loggedIn}
         handleLogout={props.handleLogout}
         title={`Привет, ${userName}`}
+        page='user'
       />
     </section>
   )

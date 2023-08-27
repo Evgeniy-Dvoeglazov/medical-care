@@ -15,8 +15,6 @@ function Popup(props) {
       return;
     }
     props.onLogin(getValues('login'), getValues('password'));
-    props.closePopup();
-    reset();
   }
 
   useEffect(() => {
@@ -82,6 +80,7 @@ function Popup(props) {
           />
           {errors.password && <span className={errorClassname('password')}>{errors.password.message}</span>}
           <button className={`popup__submitBtn ${isValid ? '' : 'popup__submitBtn_disabled'} hover`} type='submit'>Войти</button>
+          {props.authError && <span className='popup__auth-error'>Что-то пошло не так... Попробуйте ещё раз</span>}
         </form>
         <button className='popup__closeBtn hover' type='button'
           aria-label='Кнопка закрытия формы' onClick={handleClosePopupBtn}></button>

@@ -8,26 +8,15 @@ import Popup from '../Popup/Popup';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as auth from '../../utils/auth.js';
+import ProtectedRouteElement from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  // const [users, setUsers] = useState(null);
+  const [authError, setAuthError] = useState(false);
 
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const url = "http://localhost:8000/users";
-
-  //   const fetchData = async () => {
-  //     const response = await fetch(url);
-  //     const json = await response.json();
-  //     setUsers(json);
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   useEffect(() => {
     tokenCheck();
@@ -47,6 +36,7 @@ function App() {
 
   function closePopup() {
     setIsPopupOpen(false);
+    setAuthError(false);
   }
 
   function handleLogin(email, password) {
@@ -54,11 +44,13 @@ function App() {
       .then((data) => {
         if (data) {
           setLoggedIn(true);
+          closePopup();
           navigate('/user', { replace: true });
         }
       })
       .catch((err) => {
         console.log(err);
+        setAuthError(true);
       });
   }
 
@@ -69,54 +61,58 @@ function App() {
     setLoggedIn(false);
   }
 
+  console.log(loggedIn);
+
   return (
-      <div className='app'>
-        <Routes>
-          <Route path='/' element={
-            <>
-              <Header
-                openPopup={openPopup}
-                loggedIn={loggedIn}
-                handleLogout={handleLogout}
-              />
-              <Main
-                openPopup={openPopup}
-                loggedIn={loggedIn}
-              />
-            </>
-          } />
-          <Route path='/user' element={
-            <>
-              <Header
-                loggedIn={loggedIn}
-                handleLogout={handleLogout}
-              />
-              <Profile
-                loggedIn={loggedIn}
-                handleLogout={handleLogout}
-              />
-            </>
-          } />
-          <Route path='/contacts' element={
-            <>
-              <Header
-                loggedIn={loggedIn}
-                openPopup={openPopup}
-                handleLogout={handleLogout}
-              />
-              <Contacts />
-            </>
-          } />
-          <Route path="*" element={
-            <NotFoundPage />
-          } />
-        </Routes>
-        <Popup
-          onLogin={handleLogin}
-          isPopupOpen={isPopupOpen}
-          closePopup={closePopup}
-        />
-      </div>
+    <div className='app'>
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Header
+              openPopup={openPopup}
+              loggedIn={loggedIn}
+              handleLogout={handleLogout}
+            />
+            <Main
+              openPopup={openPopup}
+              loggedIn={loggedIn}
+            />
+          </>
+        } />
+        <Route path='/user' element={
+          <>
+            <Header
+              loggedIn={loggedIn}
+              handleLogout={handleLogout}
+            />
+            <ProtectedRouteElement
+              element={Profile}
+              loggedIn={loggedIn}
+              handleLogout={handleLogout}
+            />
+          </>
+        } />
+        <Route path='/contacts' element={
+          <>
+            <Header
+              loggedIn={loggedIn}
+              openPopup={openPopup}
+              handleLogout={handleLogout}
+            />
+            <Contacts />
+          </>
+        } />
+        <Route path="*" element={
+          <NotFoundPage />
+        } />
+      </Routes>
+      <Popup
+        onLogin={handleLogin}
+        isPopupOpen={isPopupOpen}
+        closePopup={closePopup}
+        authError={authError}
+      />
+    </div>
   );
 }
 

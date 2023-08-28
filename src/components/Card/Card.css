@@ -1,7 +1,7 @@
 .card {
   width: 100%;
   padding: 35px 40px;
-  box-shadow: 0 13px 19px rgba(0, 0 ,0 , .07);
+  box-shadow: 0 13px 19px rgba(0, 0, 0, .07);
   box-sizing: border-box;
 }
 
@@ -39,9 +39,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  .card-medHistory{
+  .card-medHistory {
     grid-row: 1/2;
   }
 }
-
-

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate } from "react-router-dom";
 
+// Защищенный маршрут, который может увидеть только авторизованный пользователь
 const ProtectedRouteElement = ({ element: Component, ...props }) => {
-  console.log(props.loggedIn)
   return (
     props.loggedIn ? <Component {...props} /> : <Navigate to="/" />
   )

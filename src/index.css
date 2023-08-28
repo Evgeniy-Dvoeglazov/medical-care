@@ -5,6 +5,7 @@
 .hover {
   transition: opacity .2s linear;
 }
+
 .hover:hover {
   opacity: .6;
 }

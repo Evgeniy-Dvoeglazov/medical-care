@@ -5,8 +5,10 @@ function Intro(props) {
 
   const navigate = useNavigate();
 
+  //Обработка клика на кнопку контакты
   const handleBtnContacts = () => navigate('/contacts', { replace: 'true' });
 
+  //Обработка клика на кнопки авторизации
   function handleBtn() {
     if (props.loggedIn) {
       props.handleLogout();

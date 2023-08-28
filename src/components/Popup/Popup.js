@@ -5,10 +5,12 @@ import { useForm } from 'react-hook-form';
 
 function Popup(props) {
 
+  // Хук useForm для работы с формой и настройки валидации
   const { register, formState: { errors, isValid }, getValues, reset } = useForm({ mode: 'onChange', criteriaMode: 'all' });
 
   const errorClassname = (name) => `popup__error ${errors[name] ? 'popup__error_visible' : ''}`;
 
+  // Обработка сабмита
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!getValues('login') || !getValues('password')) {
@@ -17,6 +19,7 @@ function Popup(props) {
     props.onLogin(getValues('login'), getValues('password'));
   }
 
+  // закрытие попапа на Esc
   useEffect(() => {
     function ClosePopupOnEsc(evt) {
       if ((evt.key === 'Escape') && props.isPopupOpen) {
@@ -33,6 +36,7 @@ function Popup(props) {
     }
   });
 
+  // закрытие попапа кликом на оверлей
   useEffect(() => {
     function ClosePopupOnOverlay(evt) {
       if (evt.target.classList.contains('popup_opened')) {
@@ -49,6 +53,7 @@ function Popup(props) {
     }
   });
 
+  // Закрытие попапа на крестик
   function handleClosePopupBtn() {
     props.closePopup();
     reset();

@@ -1,5 +1,6 @@
 import './Card.css';
 
+// Информационная карточка на главной странице
 function Card(props) {
   return (
     <li className={`card card-${props.name}`}>

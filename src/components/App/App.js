@@ -18,6 +18,9 @@ function App() {
 
   const navigate = useNavigate();
 
+  // При перезагрузке страницы проверяем наличие токена
+  // авторизированного пользователя, чтобы кажды раз не
+  // логиниться заново
   useEffect(() => {
     tokenCheck();
   }, []);
@@ -28,8 +31,7 @@ function App() {
       setLoggedIn(true);
     } else return;
   }
-
-
+  ////////
   function openPopup() {
     setIsPopupOpen(true);
   }
@@ -39,6 +41,7 @@ function App() {
     setAuthError(false);
   }
 
+  //Авторизация
   function handleLogin(email, password) {
     auth.authorize(email, password)
       .then((data) => {
@@ -54,14 +57,13 @@ function App() {
       });
   }
 
+  //Выход из профиля
   function handleLogout() {
     localStorage.removeItem('token');
     localStorage.removeItem('userName');
     navigate('/', { replace: true });
     setLoggedIn(false);
   }
-
-  console.log(loggedIn);
 
   return (
     <div className='app'>

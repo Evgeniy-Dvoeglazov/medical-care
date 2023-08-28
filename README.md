@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Medical-care
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Приложение, где можно получить медицинскую помощь.
+Состоит из несколько страниц: главная, профиль, контакты и страница "404".
 
-## Available Scripts
+В проекте используется пакет JSON Server для осуществления авторизации.
 
-In the project directory, you can run:
+### Данные пользователей для тестирования авторизации
 
-### `npm start`
+1. Евгений
+логин: test@test.ru
+пароль: test12345
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Николай
+логин: nikolay@test.ru
+пароль: nikolay12345
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Анна
+логин: anna@test.ru
+пароль: anna12345
 
-### `npm test`
+### Запуск проекта
+```
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [Ссылка на макет](https://www.figma.com/file/f82S6P6oe876rjoT9KjcOl/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-Frontend?type=design&node-id=2-34&mode=design&t=PrDJkB0xil7Y4SP6-0)
 
-### `npm run build`
+## Функционал проекта
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* адаптивность под разные устройства
+* всплывающее окно авторизации
+* авторизация
+* сохранение данных  о пользователе в localStorage
+* выход из профиля
+* валидация формы
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Дополнително :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Если пользователь авторизован, в хедере меняется кнопка "Контакты" на "Профиль".
+В исходном макете везде кнопка "Контакты", и пользоаватель не сможет перейти в профиль, если перешел на другую страницу.
+* Добавлена возможность перехода на главную страницу при клике на Logo.
+* Классы названы по БЭМ
+* Микроанимация кнопок
 
-### `npm run eject`
+## Стек технологий
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* React
+* JSX
+* CSS
+* React Router
+* React Hooks
+* БЭМ
+* Git
+* React-dropzone
+* JSON Server
+* JSON Server Auth
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Ссылка на опубликованный проект
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://yandex-disk-uploader.vercel.app/

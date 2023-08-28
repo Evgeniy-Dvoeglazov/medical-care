@@ -5,6 +5,7 @@ function Header(props) {
 
   const navigate = useNavigate();
 
+  // Обработка клика на кнопки Профиль и Контакты (в зависимости от статуса авторизации)
   function handleBtnNav() {
     if (props.loggedIn) {
       navigate('/user', { replace: 'true' });
@@ -13,8 +14,10 @@ function Header(props) {
     }
   }
 
+  // Обработка клика на логотип
   const handlerClickLogo = () => navigate('/', { replace: 'true' });
 
+  // Обработка клика на кнопку авторизации
   function handleBtn() {
     if (props.loggedIn) {
       props.handleLogout();

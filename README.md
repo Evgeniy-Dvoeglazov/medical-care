@@ -10,21 +10,15 @@
 
 1. Евгений
 
-логин: test@test.ru
-
-пароль: test12345
+логин: test@test.ru, пароль: test12345
 
 2. Николай
 
-логин: nikolay@test.ru
-
-пароль: nikolay12345
+логин: nikolay@test.ru, пароль: nikolay12345
 
 3. Анна
 
-логин: anna@test.ru
-
-пароль: anna12345
+логин: anna@test.ru, пароль: anna12345
 
 ### Запуск проекта
 ```
